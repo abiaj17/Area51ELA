@@ -1,13 +1,46 @@
 import Reveal from '../Reveal';
 import SectionHeader from '../SectionHeader';
 
+const VERDICTS = [
+  {
+    rank: 'WINNER',
+    theory: 'Misinformation',
+    tone: 'text-[--color-cyan-glitch]',
+    border: 'border-[--color-cyan-glitch]/50',
+    point: 'Fits every fact at once.',
+    detail:
+      'Government admitted 58 years of denial. Declassified reporting shows officials let UFO myths grow to hide weapons tests.',
+    cite: '(Leonard)',
+  },
+  {
+    rank: 'INCOMPLETE',
+    theory: 'Advanced Tech',
+    tone: 'text-[--color-amber]',
+    border: 'border-[--color-amber]/50',
+    point: 'True, but missing a layer.',
+    detail:
+      'AARO confirms classified aircraft caused real sightings — but doesn\'t explain why anyone believed they were alien.',
+    cite: '(Tingley)',
+  },
+  {
+    rank: 'WEAKEST',
+    theory: 'Extraterrestrial',
+    tone: 'text-[--color-redact]',
+    border: 'border-[--color-redact]/50',
+    point: 'No surviving evidence.',
+    detail:
+      'Pentagon 2024 review: every reverse-engineering claim is inaccurate. Witnesses don\'t hold up. Documents don\'t exist.',
+    cite: '(Tingley)',
+  },
+];
+
 export default function StrongestTheory() {
   return (
     <section
       id="strongest"
       className="relative w-full border-t border-[--color-phosphor]/15 bg-[--color-bg] px-6 py-24 md:px-10 md:py-32"
     >
-      <div className="mx-auto max-w-4xl">
+      <div className="mx-auto max-w-5xl">
         <SectionHeader
           fileNumber="05"
           label="ARGUMENT"
@@ -15,65 +48,51 @@ export default function StrongestTheory() {
           caption="weighing the three theories"
         />
 
+        {/* thesis */}
         <Reveal variant="zoom">
-          <div className="space-y-8 font-mono text-base sm:text-[1.05rem] leading-[1.85] text-[--color-phosphor]/95">
-            <p>
-              The misinformation theory is the most accurate explanation of Area 51, because it is
-              the only theory that fits every fact at the same time. The U.S. government has
-              admitted to the secrecy itself — the CIA &quot;finally admitted the existence of Area
-              51 in 2013&quot; after fifty-eight years of public denial{' '}
-              <cite className="not-italic text-[--color-phosphor-dim]">(Leonard)</cite> — which
-              proves the apparatus to hide things at this site is real, well-funded, and willing to
-              lie publicly for decades.
-            </p>
-
-            <p>
-              <span className="font-bold text-[--color-amber]">This is supported by</span> direct
-              evidence that the alien narrative was actively cultivated, not passively allowed.
-              According to reporting based on declassified material,{' '}
-              <span className="text-[--color-amber]">
-                &quot;the US government &lsquo;fabricated evidence of alien technology&rsquo; in an
-                effort to distract from secret military tests&quot;
-              </span>{' '}
-              and{' '}
-              <span className="text-[--color-amber]">
-                &quot;officials allowed UFO myths to take root in the interest of national security
-                — for instance, to prevent the Soviet Union from detecting vulnerabilities&quot;
-              </span>{' '}
-              <cite className="not-italic text-[--color-phosphor-dim]">(Leonard)</cite>. The
-              government had a strategic reason to make the public look up at the sky and think
-              &ldquo;aliens&rdquo; instead of &ldquo;new American spy plane.&rdquo;
-            </p>
-
-            <p>
-              <span className="font-bold text-[--color-amber]">In contrast,</span> the
-              extraterrestrial theory is the weakest. The Pentagon&rsquo;s 2024 historical review
-              of every UFO claim it could find concluded that{' '}
-              <span className="text-[--color-amber]">
-                &quot;claims involving specific people, known locations... and documents allegedly
-                involved in or related to the reverse-engineering of extraterrestrial technology,
-                are inaccurate&quot;
-              </span>{' '}
-              <cite className="not-italic text-[--color-phosphor-dim]">(Tingley)</cite>. Witnesses
-              like Bob Lazar do not survive scrutiny; the documents do not exist; the official
-              record refutes them.
-            </p>
-
-            <p>
-              The advanced-technology theory is true but{' '}
-              <span className="italic">incomplete</span>. AARO confirmed that{' '}
-              <span className="text-[--color-amber]">
-                &quot;at least some UFO sightings since the 1940s represent
-                &lsquo;never-before-seen experimental and operational space, rocket and air
-                systems, including stealth technologies&rsquo;&quot;
-              </span>{' '}
-              <cite className="not-italic text-[--color-phosphor-dim]">(Tingley)</cite>. Yes, the
-              objects are real classified aircraft. But that fact alone does not explain why the
-              public ever believed they were alien — the deception layer does. Misinformation is
-              the theory that contains advanced technology and explains the public mythology around
-              it. It wins because it is the most complete answer.
+          <div className="border-l-4 border-[--color-cyan-glitch] bg-black/40 p-6 sm:p-8">
+            <div className="font-mono text-[0.65rem] uppercase tracking-[0.4em] text-[--color-phosphor-dim]">
+              verdict
+            </div>
+            <p className="mt-3 font-mono text-2xl sm:text-3xl md:text-4xl font-bold leading-tight text-[--color-phosphor]">
+              Only the{' '}
+              <span className="text-[--color-cyan-glitch]">misinformation theory</span>{' '}
+              fits every fact at the same time.
             </p>
           </div>
+        </Reveal>
+
+        {/* 3 verdict cards */}
+        <Reveal variant="slide-up" stagger className="mt-10 grid grid-cols-1 gap-4 md:grid-cols-3">
+          {VERDICTS.map((v) => (
+            <article
+              key={v.theory}
+              className={`relative flex flex-col gap-3 border ${v.border} bg-black/40 p-5 backdrop-blur-[1px]`}
+            >
+              <div className="font-mono text-[0.6rem] uppercase tracking-[0.4em] text-[--color-phosphor-dim]">
+                {v.rank}
+              </div>
+              <h3 className={`font-mono text-xl sm:text-2xl font-bold ${v.tone}`}>
+                {v.theory}
+              </h3>
+              <p className={`font-mono text-sm font-bold ${v.tone}`}>{v.point}</p>
+              <p className="font-mono text-sm leading-[1.7] text-[--color-phosphor]/90">
+                {v.detail}
+              </p>
+              <p className="mt-auto font-mono text-[0.6rem] uppercase tracking-[0.3em] text-[--color-phosphor-dim]">
+                src · <span className="text-[--color-phosphor]">{v.cite}</span>
+              </p>
+            </article>
+          ))}
+        </Reveal>
+
+        {/* closer */}
+        <Reveal variant="fade" className="mt-10">
+          <p className="border-l-2 border-[--color-amber] bg-black/30 px-6 py-5 font-mono text-base sm:text-lg leading-[1.7] text-[--color-phosphor]/95">
+            Advanced technology is true. Misinformation is{' '}
+            <span className="text-[--color-amber] font-bold">why we ever called it alien</span>.
+            It wins because it contains the other theory and explains the myth.
+          </p>
         </Reveal>
       </div>
     </section>

@@ -11,7 +11,9 @@
       "Bash(git add *)",
       "Bash(git commit -m ' *)",
       "Bash(git push *)",
-      "Bash(npx tsc *)"
+      "Bash(npx tsc *)",
+      "Bash(git restore *)",
+      "Bash(echo \"tsconfig.tsbuildinfo\")"
     ],
     "additionalDirectories": [
       "/Users/abinavaj/Desktop/Area 51 ELA/public"

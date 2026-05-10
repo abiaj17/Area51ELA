@@ -23,23 +23,23 @@ type RevealProps = {
 };
 
 const FROM: Record<RevealVariant, gsap.TweenVars> = {
-  fade:        { opacity: 0, y: 18 },
-  'slide-up':  { opacity: 0, y: 60 },
-  'slide-left':{ opacity: 0, x: -60 },
+  fade:        { opacity: 0, y: 30 },
+  'slide-up':  { opacity: 0, y: 90 },
+  'slide-left':{ opacity: 0, x: -90 },
   scanline:    { opacity: 0, clipPath: 'inset(0 0 100% 0)' },
-  glitch:      { opacity: 0, skewX: 6, filter: 'blur(8px)' },
-  zoom:        { opacity: 0, scale: 0.94 },
-  typewriter:  { opacity: 0, y: 6 },
+  glitch:      { opacity: 0, skewX: 10, filter: 'blur(14px)' },
+  zoom:        { opacity: 0, scale: 0.86 },
+  typewriter:  { opacity: 0, y: 14 },
 };
 
 const TO: Record<RevealVariant, gsap.TweenVars> = {
-  fade:        { opacity: 1, y: 0, duration: 0.7, ease: 'power3.out' },
-  'slide-up':  { opacity: 1, y: 0, duration: 0.85, ease: 'power3.out' },
-  'slide-left':{ opacity: 1, x: 0, duration: 0.85, ease: 'power3.out' },
-  scanline:    { opacity: 1, clipPath: 'inset(0 0 0% 0)', duration: 0.9, ease: 'power2.inOut' },
-  glitch:      { opacity: 1, skewX: 0, filter: 'blur(0px)', duration: 0.7, ease: 'power3.out' },
-  zoom:        { opacity: 1, scale: 1, duration: 0.8, ease: 'power3.out' },
-  typewriter:  { opacity: 1, y: 0, duration: 0.45, ease: 'power2.out' },
+  fade:        { opacity: 1, y: 0, duration: 0.8, ease: 'power3.out' },
+  'slide-up':  { opacity: 1, y: 0, duration: 1.0, ease: 'power3.out' },
+  'slide-left':{ opacity: 1, x: 0, duration: 0.95, ease: 'power3.out' },
+  scanline:    { opacity: 1, clipPath: 'inset(0 0 0% 0)', duration: 1.1, ease: 'power2.inOut' },
+  glitch:      { opacity: 1, skewX: 0, filter: 'blur(0px)', duration: 0.85, ease: 'power3.out' },
+  zoom:        { opacity: 1, scale: 1, duration: 0.95, ease: 'power3.out' },
+  typewriter:  { opacity: 1, y: 0, duration: 0.55, ease: 'power2.out' },
 };
 
 const STAGGER_AMOUNT: Record<RevealVariant, number> = {
@@ -96,7 +96,7 @@ export default function Reveal({
           observer.disconnect();
         }
       },
-      { threshold: 0.1 },
+      { threshold: 0.15, rootMargin: '0px 0px -80px 0px' },
     );
 
     observer.observe(el);
