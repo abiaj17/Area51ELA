@@ -32,9 +32,9 @@ export default function ModernEvidence() {
             </p>
 
               <figure className="my-6">
-                <div className="relative overflow-hidden border border-[--color-phosphor]/20">
+                <div className="relative overflow-hidden border border-[--color-phosphor]/20 bg-[--color-phosphor]/5">
                   <Image
-                    src="/triangular-aircraft.jpg"
+                    src="/images/triangular-aircraft.jpg"
                     alt="Thermal image of triangular Dorito-shaped aircraft captured near Area 51, January 2026"
                     width={900}
                     height={540}

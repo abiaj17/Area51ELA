@@ -45,12 +45,13 @@ export default function Background() {
               </p>
 
               <figure className="mt-6">
-                <div className="relative overflow-hidden border border-[--color-phosphor]/20">
+                <div className="relative overflow-hidden border border-[--color-phosphor]/20 bg-[--color-phosphor]/5">
                   <Image
-                    src="/area51-aerial.jpg"
+                    src="/images/area51-aerial.jpg"
                     alt="Satellite view of Area 51 / Groom Lake showing runways and facilities"
                     width={900}
                     height={600}
+                    priority
                     className="w-full object-cover opacity-80 grayscale"
                   />
                 </div>
@@ -106,9 +107,9 @@ export default function Background() {
 
               <div className="mt-6 grid grid-cols-1 gap-4 sm:grid-cols-2">
                 <figure>
-                  <div className="relative overflow-hidden border border-[--color-phosphor]/20">
+                  <div className="relative overflow-hidden border border-[--color-phosphor]/20 bg-[--color-phosphor]/5">
                     <Image
-                      src="/u2-groom-lake.jpg"
+                      src="/images/u2-groom-lake.jpg"
                       alt="U-2 spy planes (NACA 310) on the flight line at Groom Lake, Area 51"
                       width={600}
                       height={420}
@@ -122,9 +123,9 @@ export default function Background() {
                 </figure>
 
                 <figure>
-                  <div className="relative overflow-hidden border border-[--color-phosphor]/20">
+                  <div className="relative overflow-hidden border border-[--color-phosphor]/20 bg-[--color-phosphor]/5">
                     <Image
-                      src="/project-mogul-balloon.jpg"
+                      src="/images/project-mogul-balloon.jpg"
                       alt="Project Mogul high-altitude balloon launch with military personnel and radar reflector"
                       width={600}
                       height={420}

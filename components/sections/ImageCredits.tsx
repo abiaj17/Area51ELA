@@ -3,7 +3,7 @@ import SectionHeader from '../SectionHeader';
 
 const CREDITS = [
   {
-    asset: 'area-51-fence.jpg',
+    asset: 'images/area-51-fence.jpg',
     fig: null,
     where: 'Hero — atmospheric backdrop behind the wordmark',
     description:
