@@ -42,6 +42,14 @@ export default function Reveal({
       return;
     }
 
+    const rect = el.getBoundingClientRect();
+    const alreadyVisible = rect.top < window.innerHeight && rect.bottom > 0;
+
+    if (alreadyVisible) {
+      gsap.set(targets, { opacity: 1, y: 0 });
+      return;
+    }
+
     gsap.set(targets, { opacity: 0, y });
 
     const tween = gsap.to(targets, {
@@ -55,6 +63,7 @@ export default function Reveal({
         trigger: el,
         start,
         once: true,
+        invalidateOnRefresh: true,
       },
     });
 
