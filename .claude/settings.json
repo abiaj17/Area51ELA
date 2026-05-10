@@ -1,0 +1,13 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\" http://localhost:4001)",
+      "Read(//private/var/folders/**)",
+      "WebSearch",
+      "WebFetch(domain:en.wikipedia.org)",
+      "WebFetch(domain:spacefromspace.com)",
+      "WebFetch(domain:commons.wikimedia.org)",
+      "WebFetch(domain:nsarchive2.gwu.edu)"
+    ]
+  }
+}
