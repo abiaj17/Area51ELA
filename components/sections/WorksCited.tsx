@@ -72,7 +72,7 @@ export default function WorksCited() {
 
         <Reveal variant="fade">
           <p className="mt-16 font-mono text-[0.65rem] sm:text-xs uppercase tracking-[0.4em] text-[--color-phosphor-dim]">
-            END&nbsp;OF&nbsp;FILE&nbsp;//&nbsp;CLASSIFIED&nbsp;DOSSIER&nbsp;51-AJ-2026
+            END&nbsp;OF&nbsp;FILE&nbsp;//&nbsp;CLASSIFIED&nbsp;FILE&nbsp;51-AJ-2026
           </p>
         </Reveal>
       </div>

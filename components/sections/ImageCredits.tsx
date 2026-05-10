@@ -62,7 +62,7 @@ export default function ImageCredits() {
         <SectionHeader
           fileNumber="10"
           label="IMAGE CREDITS"
-          title="Media Used in This Dossier"
+          title="Media Used in This File"
           caption="copyright compliance"
         />
 

@@ -12,16 +12,17 @@ export default function Intro() {
           fileNumber="02"
           label="INTRODUCTION"
           title="Aliens. Aircraft. Or a Smoke Screen?"
-          caption="the question this dossier answers"
+          caption="the question this file answers"
         />
 
         <Reveal variant="scanline">
           <div className="space-y-10">
-            <p className="font-mono text-lg sm:text-xl md:text-2xl leading-[1.6] text-[--color-phosphor]/95">
-              The U.S. government denied Area 51 existed for{' '}
-              <span className="text-[--color-amber]">58 years</span>.
-              <br />
-              That silence built one of the biggest myths in modern history.
+            <p className="font-mono text-base sm:text-lg md:text-xl leading-[1.8] text-[--color-phosphor]/95">
+              Area 51 is a 23-by-25-mile rectangle of restricted Nevada desert that the U.S.
+              government denied for nearly six decades. For three generations, every strange light
+              over the Mojave became evidence that something non-human had landed there. The truth
+              underneath the myth has always been more interesting — and more useful — than the
+              myth itself.
             </p>
 
             {/* the hook */}
@@ -30,22 +31,24 @@ export default function Intro() {
                 key&nbsp;question
               </div>
               <p className="mt-3 font-mono text-2xl sm:text-3xl md:text-4xl font-bold leading-tight text-[--color-phosphor]">
-                Aliens, classified aircraft, or
+                Is it aliens, advanced classified aircraft, or deliberate
                 <span className="text-[--color-amber]"> misinformation</span>?
               </p>
             </div>
 
             {/* the thesis */}
             <div className="grid grid-cols-[auto_1fr] gap-5 border-l-2 border-[--color-redact] pl-5 sm:pl-8">
-              <div className="font-mono text-[0.6rem] uppercase tracking-[0.4em] text-[--color-redact]">
+              <div className="font-mono text-[0.6rem] uppercase tracking-[0.4em] text-[--color-redact] writing-mode-vertical">
                 THESIS
               </div>
-              <p className="font-mono text-base sm:text-lg leading-[1.7] text-[--color-phosphor]/95">
-                The strange things people see near Area 51 are real — but they are{' '}
+              <p className="font-mono text-base sm:text-lg leading-[1.8] text-[--color-phosphor]/95">
+                This file argues the{' '}
                 <span className="bg-[--color-redact] px-1.5 py-0.5 font-bold text-black">
-                  classified aircraft
+                  misinformation theory
                 </span>{' '}
-                framed as aliens on purpose.
+                is the most accurate. The strange things people see near Area 51 are real — but
+                they are classified human aircraft, and the alien framing was an actively
+                cultivated cover story. The evidence below pushes you toward that reading.
               </p>
             </div>
           </div>

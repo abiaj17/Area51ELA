@@ -44,7 +44,7 @@ export default function Representation() {
         <SectionHeader
           fileNumber="07"
           label="PROJECT EXPLANATION"
-          title="How This Dossier Carries the Argument"
+          title="How This File Carries the Argument"
           caption="design ↔ thesis"
         />
 

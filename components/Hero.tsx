@@ -13,7 +13,7 @@ export default function Hero() {
       {/* layer -1 — atmospheric photo backdrop, monochromed to fit the CRT theme */}
       <div aria-hidden="true" className="absolute inset-0 z-0">
         <div
-          className="absolute inset-0 bg-[url('/images/area-51-fence.jpg')] bg-cover bg-center"
+          className="absolute inset-0 bg-[url('/images/area-51-fence.jpg?v=2')] bg-cover bg-center"
           style={{
             opacity: 0.22,
             filter: 'grayscale(100%) contrast(1.05) brightness(0.55)',

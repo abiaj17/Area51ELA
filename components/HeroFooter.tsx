@@ -10,7 +10,7 @@ export default function HeroFooter() {
 
       <div className="flex items-center gap-6">
         <span className="hidden sm:inline opacity-60">
-          INSTANCE&nbsp;01&nbsp;//&nbsp;ELA&nbsp;RESEARCH&nbsp;DOSSIER
+          INSTANCE&nbsp;01&nbsp;//&nbsp;ELA&nbsp;CLASSIFIED&nbsp;FILE
         </span>
         <a
           href="#intro"

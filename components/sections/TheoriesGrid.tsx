@@ -5,9 +5,10 @@ type TheoryCard = {
   index: string;
   name: string;
   glyph: string;
-  tone: string;
-  border: string;
+  tone: string;          // tailwind text color class for accents
+  border: string;        // tailwind border color class
   blurb: string;
+  quote: string;
   citation: string;
 };
 
@@ -18,16 +19,22 @@ const THEORIES: TheoryCard[] = [
     glyph: '◉',
     tone: 'text-[--color-redact]',
     border: 'border-[--color-redact]/45',
-    blurb: 'Crashed alien spacecraft, reverse-engineered in secret.',
+    blurb:
+      'A crashed alien spacecraft and its crew were recovered and stored at Area 51 for reverse engineering.',
+    quote:
+      '"Bob Lazar, an American who went on TV claiming he had worked at Area 51 \'reverse engineering\' one of nine alien spacecraft."',
     citation: '(Leonard)',
   },
   {
     index: 'T-02',
-    name: 'Advanced Tech',
+    name: 'Advanced Technology',
     glyph: '△',
     tone: 'text-[--color-amber]',
     border: 'border-[--color-amber]/45',
-    blurb: 'Real sightings — but classified human aircraft, mistaken for UFOs.',
+    blurb:
+      'The objects people see are real — but they are classified, experimental human aircraft mistaken for UFOs.',
+    quote:
+      '"At least some UFO sightings since the 1940s represent \'never-before-seen experimental and operational space, rocket and air systems, including stealth technologies.\'"',
     citation: '(Tingley)',
   },
   {
@@ -36,7 +43,10 @@ const THEORIES: TheoryCard[] = [
     glyph: '▲',
     tone: 'text-[--color-cyan-glitch]',
     border: 'border-[--color-cyan-glitch]/45',
-    blurb: 'The alien story was a smoke screen the government let grow.',
+    blurb:
+      'The U.S. government deliberately encouraged the alien narrative as a smoke screen to protect classified weapons programs.',
+    quote:
+      '"The US government \'fabricated evidence of alien technology\' in an effort to distract from secret military tests."',
     citation: '(Leonard)',
   },
 ];
@@ -57,7 +67,7 @@ export default function TheoriesGrid() {
 
         <div className="grid grid-cols-1 gap-5 md:grid-cols-3">
           {THEORIES.map((t, i) => (
-            <Reveal key={t.index} as="article" variant="slide-left" delay={i * 0.12} className="h-full">
+            <Reveal key={t.index} as="article" variant="slide-left" delay={i * 0.1} className="h-full">
               <div className={`relative flex h-full flex-col gap-5 border ${t.border} bg-black/40 p-6 backdrop-blur-[1px] transition-colors duration-300 hover:bg-black/60`}>
                 <span aria-hidden className="absolute left-0 top-0 h-3 w-3 border-l border-t border-current" />
                 <span aria-hidden className="absolute right-0 top-0 h-3 w-3 border-r border-t border-current" />
@@ -73,12 +83,17 @@ export default function TheoriesGrid() {
                   {t.name}
                 </h3>
 
-                <p className="font-mono text-[0.95rem] leading-[1.7] text-[--color-phosphor]/90">
+                <p className="font-mono text-sm sm:text-[0.95rem] leading-relaxed text-[--color-phosphor]/90">
                   {t.blurb}
                 </p>
 
-                <footer className="mt-auto font-mono text-[0.6rem] uppercase tracking-[0.35em] text-[--color-phosphor-dim]">
-                  src · <span className="text-[--color-phosphor]">{t.citation}</span>
+                <blockquote className="mt-auto border-l border-[--color-phosphor]/30 pl-4 font-mono text-xs sm:text-sm leading-relaxed text-[--color-phosphor]/80">
+                  <span aria-hidden className="mr-1 text-[--color-phosphor-dim]">&gt;</span>
+                  {t.quote}
+                </blockquote>
+
+                <footer className="font-mono text-[0.6rem] uppercase tracking-[0.35em] text-[--color-phosphor-dim]">
+                  source · <span className="text-[--color-phosphor]">{t.citation}</span>
                 </footer>
               </div>
             </Reveal>
@@ -87,7 +102,7 @@ export default function TheoriesGrid() {
 
         <Reveal variant="fade">
           <p className="mt-10 font-mono text-xs uppercase tracking-[0.35em] text-[--color-phosphor-dim]">
-            // the next file weighs them.
+            // these are presented without bias. the next file weighs them.
           </p>
         </Reveal>
       </div>

@@ -26,9 +26,9 @@ const tinos = Tinos({
 });
 
 export const metadata: Metadata = {
-  title: 'AREA 51 // CLASSIFIED DOSSIER',
+  title: 'AREA 51 // CLASSIFIED FILE',
   description:
-    'A 23-by-25-mile rectangle of Nevada desert the U.S. government denied for 58 years. An ELA research dossier on the facts, theories, and the smoke screen between them.',
+    'A 23-by-25-mile rectangle of Nevada desert the U.S. government denied for 58 years. An ELA classified file on the facts, theories, and the smoke screen between them.',
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {

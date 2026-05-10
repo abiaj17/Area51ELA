@@ -10,7 +10,7 @@ export default function ClassifiedHeader() {
       <div className="hidden md:block text-center text-[--color-phosphor]">
         <span className="opacity-60">DOC&nbsp;//</span>{' '}
         <span className="font-semibold">51-AJ-2026</span>{' '}
-        <span className="opacity-60">— DOSSIER ALPHA</span>
+        <span className="opacity-60">— FILE ALPHA</span>
       </div>
 
       <div className="flex items-center gap-2">
