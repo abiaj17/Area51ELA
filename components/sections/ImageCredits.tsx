@@ -66,7 +66,7 @@ export default function ImageCredits() {
           caption="copyright compliance"
         />
 
-        <Reveal stagger className="space-y-6">
+        <Reveal variant="slide-up" stagger className="space-y-6">
           {CREDITS.map((c) => (
             <article
               key={c.asset}
@@ -89,7 +89,7 @@ export default function ImageCredits() {
           ))}
         </Reveal>
 
-        <Reveal>
+        <Reveal variant="fade">
           <p className="mt-12 font-mono text-[0.7rem] sm:text-xs leading-relaxed text-[--color-phosphor-dim]">
             All quoted material is reproduced under fair-use educational allowance and is fully
             cited above in <span className="text-[--color-phosphor]">FILE 09 — WORKS CITED</span>.

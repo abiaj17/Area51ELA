@@ -15,7 +15,7 @@ export default function Intro() {
           caption="the question this dossier answers"
         />
 
-        <Reveal>
+        <Reveal variant="scanline">
           <div className="space-y-10">
             <p className="font-mono text-base sm:text-lg md:text-xl leading-[1.8] text-[--color-phosphor]/95">
               Area 51 is a 23-by-25-mile rectangle of restricted Nevada desert that the U.S.

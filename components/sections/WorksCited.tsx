@@ -46,7 +46,7 @@ export default function WorksCited() {
           caption="4 sources // 1 from school database"
         />
 
-        <Reveal stagger className="space-y-7">
+        <Reveal variant="typewriter" stagger className="space-y-7">
           {SOURCES.map((s) => (
             <div key={s.parenthetical} className="border-l-2 border-[--color-phosphor]/30 pl-5">
               <div className="flex flex-wrap items-center gap-2 font-mono text-[0.6rem] uppercase tracking-[0.35em]">
@@ -70,7 +70,7 @@ export default function WorksCited() {
           ))}
         </Reveal>
 
-        <Reveal>
+        <Reveal variant="fade">
           <p className="mt-16 font-mono text-[0.65rem] sm:text-xs uppercase tracking-[0.4em] text-[--color-phosphor-dim]">
             END&nbsp;OF&nbsp;FILE&nbsp;//&nbsp;CLASSIFIED&nbsp;DOSSIER&nbsp;51-AJ-2026
           </p>

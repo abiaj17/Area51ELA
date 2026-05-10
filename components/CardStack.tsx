@@ -2,15 +2,11 @@
 
 import { Children, useEffect, useLayoutEffect, useRef } from 'react';
 import gsap from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
-
-gsap.registerPlugin(ScrollTrigger);
 
 function SectionCard({ children }: { children: React.ReactNode }) {
   const cardRef = useRef<HTMLDivElement>(null);
   const doorRef = useRef<HTMLDivElement>(null);
 
-  // Hide card before paint to avoid flash of unstyled content
   useLayoutEffect(() => {
     if (cardRef.current) {
       cardRef.current.style.opacity = '0';
@@ -23,34 +19,31 @@ function SectionCard({ children }: { children: React.ReactNode }) {
     const door = doorRef.current;
     if (!card || !door) return;
 
-    const tl = gsap.timeline({ paused: true });
+    const reveal = () => {
+      const tl = gsap.timeline();
+      tl.to(card, { opacity: 1, y: 0, duration: 0.6, ease: 'power3.out' });
+      tl.to(door, { yPercent: -100, duration: 0.55, ease: 'power2.inOut' }, '-=0.3');
+    };
 
-    // Card slides up into place
-    tl.to(card, {
-      opacity: 1,
-      y: 0,
-      duration: 0.6,
-      ease: 'power3.out',
-    });
+    // Already visible on mount — reveal immediately, no observer needed
+    const rect = card.getBoundingClientRect();
+    if (rect.top < window.innerHeight && rect.bottom > 0) {
+      reveal();
+      return;
+    }
 
-    // Door sweeps upward — "opens" the card
-    tl.to(
-      door,
-      { yPercent: -100, duration: 0.55, ease: 'power2.inOut' },
-      '-=0.3',
+    const observer = new IntersectionObserver(
+      (entries) => {
+        if (entries[0].isIntersecting) {
+          reveal();
+          observer.disconnect();
+        }
+      },
+      { threshold: 0.15 },
     );
 
-    const trigger = ScrollTrigger.create({
-      trigger: card,
-      start: 'top 85%',
-      onEnter: () => tl.play(),
-      once: true,
-    });
-
-    return () => {
-      trigger.kill();
-      tl.kill();
-    };
+    observer.observe(card);
+    return () => observer.disconnect();
   }, []);
 
   return (
@@ -64,7 +57,6 @@ function SectionCard({ children }: { children: React.ReactNode }) {
         [&>section]:border-t-0
       "
     >
-      {/* Sealed overlay — sweeps up on scroll reveal */}
       <div
         ref={doorRef}
         aria-hidden

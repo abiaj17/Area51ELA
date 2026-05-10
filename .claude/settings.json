@@ -7,7 +7,14 @@
       "WebFetch(domain:en.wikipedia.org)",
       "WebFetch(domain:spacefromspace.com)",
       "WebFetch(domain:commons.wikimedia.org)",
-      "WebFetch(domain:nsarchive2.gwu.edu)"
+      "WebFetch(domain:nsarchive2.gwu.edu)",
+      "Bash(git add *)",
+      "Bash(git commit -m ' *)",
+      "Bash(git push *)",
+      "Bash(npx tsc *)"
+    ],
+    "additionalDirectories": [
+      "/Users/abinavaj/Desktop/Area 51 ELA/public"
     ]
   }
 }

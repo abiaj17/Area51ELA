@@ -15,7 +15,7 @@ export default function StrongestTheory() {
           caption="weighing the three theories"
         />
 
-        <Reveal>
+        <Reveal variant="zoom">
           <div className="space-y-8 font-mono text-base sm:text-[1.05rem] leading-[1.85] text-[--color-phosphor]/95">
             <p>
               The misinformation theory is the most accurate explanation of Area 51, because it is

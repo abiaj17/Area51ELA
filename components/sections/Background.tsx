@@ -1,4 +1,3 @@
-import Image from 'next/image';
 import Reveal from '../Reveal';
 import SectionHeader from '../SectionHeader';
 
@@ -25,7 +24,7 @@ export default function Background() {
           caption="location · purpose · impact"
         />
 
-        <Reveal>
+        <Reveal variant="slide-up">
           <div className="space-y-12 font-mono text-[0.95rem] sm:text-base leading-[1.85] text-[--color-phosphor]/90">
             {/* WHERE */}
             <div>
@@ -46,12 +45,14 @@ export default function Background() {
 
               <figure className="mt-6">
                 <div className="relative overflow-hidden border border-[--color-phosphor]/20 bg-[--color-phosphor]/5">
-                  <Image
+                  <img
                     src="/images/area51-aerial.jpg"
                     alt="Satellite view of Area 51 / Groom Lake showing runways and facilities"
                     width={900}
                     height={600}
-                    priority
+                    loading="eager"
+                    fetchPriority="high"
+                    decoding="async"
                     className="w-full object-cover opacity-80 grayscale"
                   />
                 </div>
@@ -108,11 +109,13 @@ export default function Background() {
               <div className="mt-6 grid grid-cols-1 gap-4 sm:grid-cols-2">
                 <figure>
                   <div className="relative overflow-hidden border border-[--color-phosphor]/20 bg-[--color-phosphor]/5">
-                    <Image
+                    <img
                       src="/images/u2-groom-lake.jpg"
                       alt="U-2 spy planes (NACA 310) on the flight line at Groom Lake, Area 51"
                       width={600}
                       height={420}
+                      loading="lazy"
+                      decoding="async"
                       className="w-full object-cover opacity-80 grayscale"
                     />
                   </div>
@@ -124,11 +127,13 @@ export default function Background() {
 
                 <figure>
                   <div className="relative overflow-hidden border border-[--color-phosphor]/20 bg-[--color-phosphor]/5">
-                    <Image
+                    <img
                       src="/images/project-mogul-balloon.jpg"
                       alt="Project Mogul high-altitude balloon launch with military personnel and radar reflector"
                       width={600}
                       height={420}
+                      loading="lazy"
+                      decoding="async"
                       className="w-full object-cover opacity-80 grayscale"
                     />
                   </div>

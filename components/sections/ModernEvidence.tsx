@@ -1,4 +1,3 @@
-import Image from 'next/image';
 import Reveal from '../Reveal';
 import SectionHeader from '../SectionHeader';
 
@@ -16,7 +15,7 @@ export default function ModernEvidence() {
           caption="2026 // ongoing"
         />
 
-        <Reveal>
+        <Reveal variant="glitch">
           <div className="space-y-8 font-mono text-base sm:text-[1.05rem] leading-[1.85] text-[--color-phosphor]/95">
             <p>
               The Area 51 mystery has not been solved — only better explained. Photographs taken in
@@ -33,11 +32,13 @@ export default function ModernEvidence() {
 
               <figure className="my-6">
                 <div className="relative overflow-hidden border border-[--color-phosphor]/20 bg-[--color-phosphor]/5">
-                  <Image
+                  <img
                     src="/images/triangular-aircraft.jpg"
                     alt="Thermal image of triangular Dorito-shaped aircraft captured near Area 51, January 2026"
                     width={900}
                     height={540}
+                    loading="lazy"
+                    decoding="async"
                     className="w-full object-cover opacity-85 grayscale"
                   />
                 </div>

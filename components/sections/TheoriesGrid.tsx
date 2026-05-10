@@ -66,8 +66,8 @@ export default function TheoriesGrid() {
         />
 
         <div className="grid grid-cols-1 gap-5 md:grid-cols-3">
-          {THEORIES.map((t) => (
-            <Reveal key={t.index} as="article" className="h-full">
+          {THEORIES.map((t, i) => (
+            <Reveal key={t.index} as="article" variant="slide-left" delay={i * 0.1} className="h-full">
               <div className={`relative flex h-full flex-col gap-5 border ${t.border} bg-black/40 p-6 backdrop-blur-[1px] transition-colors duration-300 hover:bg-black/60`}>
                 <span aria-hidden className="absolute left-0 top-0 h-3 w-3 border-l border-t border-current" />
                 <span aria-hidden className="absolute right-0 top-0 h-3 w-3 border-r border-t border-current" />
@@ -100,7 +100,7 @@ export default function TheoriesGrid() {
           ))}
         </div>
 
-        <Reveal>
+        <Reveal variant="fade">
           <p className="mt-10 font-mono text-xs uppercase tracking-[0.35em] text-[--color-phosphor-dim]">
             // these are presented without bias. the next file weighs them.
           </p>
