@@ -46,28 +46,26 @@ export default function Background() {
         />
 
         {/* 3-up fact grid */}
-        <Reveal variant="slide-up" stagger>
-          <div className="grid grid-cols-1 gap-4 md:grid-cols-3">
-            {FACTS.map((f) => (
-              <div
-                key={f.label}
-                className="border border-[--color-phosphor]/25 bg-black/40 p-5 backdrop-blur-[1px]"
-              >
-                <div className="font-mono text-[0.6rem] uppercase tracking-[0.4em] text-[--color-redact]">
-                  {f.label}
-                </div>
-                <h3 className="mt-2 font-mono text-xl font-bold text-[--color-amber]">
-                  {f.title}
-                </h3>
-                <p className="mt-3 font-mono text-sm leading-[1.7] text-[--color-phosphor]/90">
-                  {f.body}
-                </p>
-                <p className="mt-3 font-mono text-[0.6rem] uppercase tracking-[0.3em] text-[--color-phosphor-dim]">
-                  src · <span className="text-[--color-phosphor]">{f.cite}</span>
-                </p>
+        <Reveal variant="slide-up" stagger className="grid grid-cols-1 gap-4 md:grid-cols-3">
+          {FACTS.map((f) => (
+            <div
+              key={f.label}
+              className="border border-[--color-phosphor]/25 bg-black/40 p-5 backdrop-blur-[1px]"
+            >
+              <div className="font-mono text-[0.6rem] uppercase tracking-[0.4em] text-[--color-redact]">
+                {f.label}
               </div>
-            ))}
-          </div>
+              <h3 className="mt-2 font-mono text-xl font-bold text-[--color-amber]">
+                {f.title}
+              </h3>
+              <p className="mt-3 font-mono text-sm leading-[1.7] text-[--color-phosphor]/90">
+                {f.body}
+              </p>
+              <p className="mt-3 font-mono text-[0.6rem] uppercase tracking-[0.3em] text-[--color-phosphor-dim]">
+                src · <span className="text-[--color-phosphor]">{f.cite}</span>
+              </p>
+            </div>
+          ))}
         </Reveal>
 
         {/* hero image */}
@@ -131,30 +129,35 @@ export default function Background() {
         </Reveal>
 
         {/* TIMELINE */}
-        <Reveal variant="slide-left" stagger className="mt-16">
-          <div>
+        <div className="mt-16">
+          <Reveal variant="fade">
             <h3 className="mb-6 font-mono text-xl sm:text-2xl font-bold text-[--color-amber]">
               <span className="text-[--color-phosphor-dim] mr-3">&gt;</span>Timeline
             </h3>
-            <ol className="relative space-y-5 border-l border-[--color-phosphor]/30 pl-6">
-              {TIMELINE.map((row) => (
-                <li key={row.year} className="relative">
-                  <span
-                    aria-hidden
-                    className="absolute -left-[31px] top-2 h-2 w-2 rotate-45 bg-[--color-phosphor]"
-                  />
-                  <div className="font-mono text-xs uppercase tracking-[0.3em] text-[--color-redact]">
-                    {row.year}
-                  </div>
-                  <p className="mt-1 font-mono text-sm sm:text-[0.95rem] text-[--color-phosphor]/90">
-                    {row.event}{' '}
-                    <cite className="not-italic text-[--color-phosphor-dim]">{row.cite}</cite>
-                  </p>
-                </li>
-              ))}
-            </ol>
-          </div>
-        </Reveal>
+          </Reveal>
+          <Reveal
+            as="ol"
+            variant="slide-left"
+            stagger
+            className="relative space-y-5 border-l border-[--color-phosphor]/30 pl-6"
+          >
+            {TIMELINE.map((row) => (
+              <li key={row.year} className="relative">
+                <span
+                  aria-hidden
+                  className="absolute -left-[31px] top-2 h-2 w-2 rotate-45 bg-[--color-phosphor]"
+                />
+                <div className="font-mono text-xs uppercase tracking-[0.3em] text-[--color-redact]">
+                  {row.year}
+                </div>
+                <p className="mt-1 font-mono text-sm sm:text-[0.95rem] text-[--color-phosphor]/90">
+                  {row.event}{' '}
+                  <cite className="not-italic text-[--color-phosphor-dim]">{row.cite}</cite>
+                </p>
+              </li>
+            ))}
+          </Reveal>
+        </div>
       </div>
     </section>
   );

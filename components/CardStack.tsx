@@ -5,27 +5,27 @@ import gsap from 'gsap';
 
 function SectionCard({ children }: { children: React.ReactNode }) {
   const cardRef = useRef<HTMLDivElement>(null);
-  const doorRef = useRef<HTMLDivElement>(null);
 
   useLayoutEffect(() => {
     if (cardRef.current) {
       cardRef.current.style.opacity = '0';
-      cardRef.current.style.transform = 'translateY(24px)';
+      cardRef.current.style.transform = 'translateY(16px)';
     }
   }, []);
 
   useEffect(() => {
     const card = cardRef.current;
-    const door = doorRef.current;
-    if (!card || !door) return;
+    if (!card) return;
 
     const reveal = () => {
-      const tl = gsap.timeline();
-      tl.to(card, { opacity: 1, y: 0, duration: 0.6, ease: 'power3.out' });
-      tl.to(door, { yPercent: -100, duration: 0.55, ease: 'power2.inOut' }, '-=0.3');
+      gsap.to(card, {
+        opacity: 1,
+        y: 0,
+        duration: 0.5,
+        ease: 'power2.out',
+      });
     };
 
-    // Already visible on mount — reveal immediately, no observer needed
     const rect = card.getBoundingClientRect();
     if (rect.top < window.innerHeight && rect.bottom > 0) {
       reveal();
@@ -39,7 +39,7 @@ function SectionCard({ children }: { children: React.ReactNode }) {
           observer.disconnect();
         }
       },
-      { threshold: 0.15 },
+      { threshold: 0.05 },
     );
 
     observer.observe(card);
@@ -57,12 +57,6 @@ function SectionCard({ children }: { children: React.ReactNode }) {
         [&>section]:border-t-0
       "
     >
-      <div
-        ref={doorRef}
-        aria-hidden
-        className="pointer-events-none absolute inset-x-0 top-0 z-20 h-full bg-[--color-bg]"
-        style={{ borderBottom: '1px solid rgba(124,255,178,0.18)' }}
-      />
       {children}
     </div>
   );
