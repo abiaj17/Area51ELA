@@ -4,6 +4,7 @@ import GlitchTitle from './GlitchTitle';
 import HeroFooter from './HeroFooter';
 import UnicornScene from './UnicornScene';
 import SplinePlanet from './SplinePlanet';
+import area51Fence from './assets/area-51-fence.jpg';
 
 const UNICORN_PROJECT_ID = 'spXIETdEZItH4TogDl2M';
 
@@ -12,8 +13,11 @@ export default function Hero() {
     <section className="crt-flicker relative isolate min-h-svh w-full overflow-hidden bg-[--color-bg]">
       {/* layer -1 — atmospheric photo backdrop, monochromed to fit the CRT theme */}
       <div aria-hidden="true" className="absolute inset-0 z-0">
-        <div
-          className="absolute inset-0 bg-[url('/images/area-51-fence.jpg?v=2')] bg-cover bg-center"
+        <img
+          src={area51Fence.src}
+          alt=""
+          aria-hidden="true"
+          className="absolute inset-0 h-full w-full object-cover"
           style={{
             opacity: 0.22,
             filter: 'grayscale(100%) contrast(1.05) brightness(0.55)',

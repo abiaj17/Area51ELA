@@ -1,5 +1,6 @@
 import Reveal from '../Reveal';
 import SectionHeader from '../SectionHeader';
+import triangularAircraft from '../assets/triangular-aircraft.jpg';
 
 export default function ModernEvidence() {
   return (
@@ -33,10 +34,10 @@ export default function ModernEvidence() {
               <figure className="my-6">
                 <div className="relative overflow-hidden border border-[--color-phosphor]/20 bg-[--color-phosphor]/5">
                   <img
-                    src="/images/triangular-aircraft.jpg?v=2"
+                    src={triangularAircraft.src}
                     alt="Thermal image of triangular Dorito-shaped aircraft captured near Area 51, January 2026"
-                    width={900}
-                    height={540}
+                    width={triangularAircraft.width}
+                    height={triangularAircraft.height}
                     loading="lazy"
                     decoding="async"
                     className="w-full object-cover opacity-85 grayscale"

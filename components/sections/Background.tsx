@@ -1,5 +1,8 @@
 import Reveal from '../Reveal';
 import SectionHeader from '../SectionHeader';
+import area51Aerial from '../assets/area51-aerial.jpg';
+import u2GroomLake from '../assets/u2-groom-lake.jpg';
+import projectMogul from '../assets/project-mogul-balloon.jpg';
 
 const TIMELINE = [
   { year: '1947', event: 'Roswell crash — later traced to Project Mogul, a Cold War spy-balloon program.', cite: '(Tingley)' },
@@ -46,10 +49,10 @@ export default function Background() {
               <figure className="mt-6">
                 <div className="relative overflow-hidden border border-[--color-phosphor]/20 bg-[--color-phosphor]/5">
                   <img
-                    src="/images/area51-aerial.jpg?v=2"
+                    src={area51Aerial.src}
                     alt="Satellite view of Area 51 / Groom Lake showing runways and facilities"
-                    width={900}
-                    height={600}
+                    width={area51Aerial.width}
+                    height={area51Aerial.height}
                     loading="eager"
                     fetchPriority="high"
                     decoding="async"
@@ -110,10 +113,10 @@ export default function Background() {
                 <figure>
                   <div className="relative overflow-hidden border border-[--color-phosphor]/20 bg-[--color-phosphor]/5">
                     <img
-                      src="/images/u2-groom-lake.jpg?v=2"
+                      src={u2GroomLake.src}
                       alt="U-2 spy planes (NACA 310) on the flight line at Groom Lake, Area 51"
-                      width={600}
-                      height={420}
+                      width={u2GroomLake.width}
+                      height={u2GroomLake.height}
                       loading="lazy"
                       decoding="async"
                       className="w-full object-cover opacity-80 grayscale"
@@ -128,10 +131,10 @@ export default function Background() {
                 <figure>
                   <div className="relative overflow-hidden border border-[--color-phosphor]/20 bg-[--color-phosphor]/5">
                     <img
-                      src="/images/project-mogul-balloon.jpg?v=2"
+                      src={projectMogul.src}
                       alt="Project Mogul high-altitude balloon launch with military personnel and radar reflector"
-                      width={600}
-                      height={420}
+                      width={projectMogul.width}
+                      height={projectMogul.height}
                       loading="lazy"
                       decoding="async"
                       className="w-full object-cover opacity-80 grayscale"

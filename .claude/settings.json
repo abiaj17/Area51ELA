@@ -14,10 +14,16 @@
       "Bash(npx tsc *)",
       "Bash(git restore *)",
       "Bash(echo \"tsconfig.tsbuildinfo\")",
-      "Bash(git checkout *)"
+      "Bash(git checkout *)",
+      "Bash(curl -sI -L \"https://area51-ela.vercel.app/images/area51-aerial.jpg\")",
+      "Bash(curl -sI \"https://area-51-ela.vercel.app/images/area51-aerial.jpg\")",
+      "Bash(curl -sI \"https://area51ela.vercel.app/images/area51-aerial.jpg\")",
+      "Bash(npx next *)",
+      "Bash(git rm *)"
     ],
     "additionalDirectories": [
-      "/Users/abinavaj/Desktop/Area 51 ELA/public"
+      "/Users/abinavaj/Desktop/Area 51 ELA/public",
+      "/Users/abinavaj/Desktop/Area 51 ELA/public/images"
     ]
   }
 }
